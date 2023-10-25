@@ -6,50 +6,50 @@ public class Endereco {
     private String estado;
 
 public Endereco(String numero, String rua, String bairro, String cidade, String estado) {
-        this.numero = numero;
-        this.rua = rua;
-        this.bairro = bairro;
-        this.cidade = cidade;
-        this.estado = estado;
-    }
-
-    public String getNumero() {
-        return numero;
-   }
-
-   public void setNumero(String numero) {
     this.numero = numero;
+    this.rua = rua;
+    this.bairro = bairro;
+    this.cidade = cidade;
+    this.estado = estado;
+}
+
+public String getNumero() {
+     return numero;
+}
+
+public void setNumero(String numero) {
+     this.numero = numero;
 }
 
 public String getRua() {
-    return rua;
+     return rua;
 }
 
 public void setRua(String rua) {
-    this.rua = rua;
+     this.rua = rua;
 }
 
 public String getBairro() {
-    return bairro;
+     return bairro;
 }
 
 public void setBairro(String bairro) {
-    this.bairro = bairro;
+     this.bairro = bairro;
 }
 
 public String getCidade() {
-    return cidade;
+      return cidade;
 }
 
 public void setCidade(String cidade) {
-    this.cidade = cidade;
+     this.cidade = cidade;
 }
 
 public String getEstado() {
-    return estado;
+     return estado;
 }
 
 public void setEstado(String estado) {
-    this.estado = estado;
+     this.estado = estado;
 }
 }
