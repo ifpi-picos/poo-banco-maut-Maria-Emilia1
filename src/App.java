@@ -1,27 +1,35 @@
 public class App {
     public static void main(String[] args) {
 
-         Cliente cliente = new Cliente("Emilia", "123456789", "01/01/1990", "Rua Principal, 123");
-
-         System.out.println("Nome do cliente: " + cliente.getNome());
-         System.out.println("CPF: " + cliente.getCpf());
-         System.out.println("Data de Nascimento: " + cliente.getDataNascimento());
-         System.out.println("Endereço: " + cliente.getEndereco());
+        Cliente cliente = new Cliente("Emilia", "123456789", "01/01/1990", "Rua Principal, 123");
 
 
-         cliente.setNome("Ludymila");
-         cliente.setDataNascimento("02/02/1985");
-         cliente.setEndereco("Avenida Secundária, 456");
+        // Não deveria criar objetos do tipo Conta
+        Conta cc = new ContaC(0, 0, cliente, 100, new Sms(), 0);
+        Conta cc2 = new ContaC(0, 0, cliente, 100, new Sms(), 0);
+        Conta cp = new ContaP(0, 0, cliente, 0.1, 0.1, 0.1, 0, new Email());
 
+        // não está enviando notificações
+        cc.depositar(100);
+        System.out.println(cc.getSaldo());
+        cc.sacar(50);
+        System.out.println(cc.getSaldo());
+        cc.transferir(cc2, 10);
+        cc.transferir(cc2, 10);
+        // não está cobrando a taxa de transferencia
+        cc.transferir(cc2, 10);
+        cc.transferir(cc2, 10);
+        // não está utilizando o limite de cheque especial
+        cc.transferir(cc2, 10);
+        cc.transferir(cc2, 10);
+        System.out.println(cc.getSaldo());
+        System.out.println(cc2.getSaldo());
+        // System.out.println(cc.getTransacoes());
 
-         System.out.println("\nInformações atualizadas do cliente:");
-         System.out.println("Nome do cliente: " + cliente.getNome());
-         System.out.println("Data de Nascimento: " + cliente.getDataNascimento());
-         System.out.println("Endereço: " + cliente.getEndereco());
+        cp.depositar(100);
+        cp.sacar(10);
 
-         Conta conta = new Conta(123456, 654321, cliente, 0.0);
+        System.out.println(cp.getSaldo());
 
-         conta.depositar(100.0);
-         System.out.println("\nSeu saldo é:" + conta.getSaldo());
     }
 }
